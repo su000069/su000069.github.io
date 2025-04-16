@@ -1,0 +1,838 @@
+/* CSS Reset */
+/* Reset default styles and apply box-sizing: border-box */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Import Open Sans from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+/* Basic page setup: font, background, text color, centered max width */
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: white;
+  color: #222;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+/* Grid with logo, nav, and search sections */
+header {
+  background-color: #222;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  padding: 1rem 3rem 1rem 4rem;
+  gap: 1rem;
+}
+/* Center the logo inside the container */
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo img {
+  height: 80px;
+}
+/* Center nav items in a horizontal row */
+nav {
+  display: flex;
+  justify-content: center;
+}
+/* Remove default list style and add spacing */
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+/* Style for nav links */
+nav ul li a {
+  color: #c78c06;
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border: 2px solid transparent;
+  display: inline-block;
+  line-height: 1.2;
+}
+/* Highlight on hover or focus */
+nav a:hover,
+nav a:focus {
+  background-color: #c78c06;
+  color: #222;
+}
+/* Search area: center items and add spacing */
+.header-search {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+/* Input field style */
+.search-form input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  width: 150px;
+}
+/* Button style for search */
+.search-form button {
+  background-color: transparent;
+  color: #c78c06;
+  border: 1px solid #c78c06;
+  padding: 0.5rem 0.8rem;
+  cursor: pointer;
+}
+
+/* Hero */
+/* background image with centered text on top*/
+.hero {
+  position: relative;
+}
+/* Make sure the image fills the space without distortion */
+.hero img {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: cover;
+  display: block;
+}
+/* Center the text and add a dark overlay for readability */
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  width: calc(100% - 11rem);
+  max-width: 1200px;
+  padding-top: 2rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 0.5rem;
+}
+
+.hero-text h1 {
+  font-size: 5rem;
+  line-height: 1.2;
+  word-break: break-word;
+  padding: 0 0 0.5rem;
+}
+
+.hero-text p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  padding-bottom: 1rem;
+}
+
+.hero-text a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  background-color: #c78c06;
+  color: #222;
+  padding: 2rem 2.5rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-decoration: none;
+  max-width: 300px;
+  margin-top: auto;
+}
+
+/* About */
+/* left image, right text, with brand yellow background */
+.about {
+  background-color: #ffe6ac;
+  padding: 0.8rem 0.8rem; 
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;         
+  align-items: center;
+}
+/* Image aligned right, taking up 85% width */
+.about img {
+  width: 85%;          
+  height: auto;
+  display: block;
+  margin-left: auto;   
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.about-text p {
+  width: 85%;              
+  margin-right: auto;      
+  font-size: 0.8rem; 
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  font-weight: bold; 
+}
+/* Services*/
+/*   6-column grid layout with different spans per item */
+.services {
+  padding: 2rem 6rem;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); 
+  gap: 0.5rem;
+}
+/* Section title spans full width */
+.services h2 {
+  grid-column: 1 / -1; 
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+/* 1 Digital Transformation */
+.service:nth-of-type(1) {
+  grid-column: span 3;
+}
+
+/* 2 Marketing */
+.service:nth-of-type(2) {
+  grid-column: span 3;
+}
+
+/* 345 */
+.service:nth-of-type(n+3) {
+  grid-column: span 2;
+}
+/* Basic service card style: yellow background with vertical layout */
+.service {
+  background-color: #ffe6ac;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+}
+
+/* Image fills the top of the card */
+.service img {
+  width: 100%;
+  height: auto;
+}
+
+.service h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 1.5rem 1rem 0 0.8rem;
+}
+
+.service p {
+  font-size: 0.9rem;
+  padding: 1.5rem 0.5rem 0.5rem;
+  line-height: 1.4;
+  flex-grow: 1;
+}
+
+.service a {
+  background-color: #222;
+  color: white;
+  text-decoration: none;
+  padding: 1.8rem 1rem;
+  margin: 0 0.5rem 0.5rem;
+  display: inline-block;
+  font-weight: bold;
+  text-align: center;
+}
+/* Our Vision Section */
+/* Use a background image with text overlaid on top */
+.vision {
+  background-image: url("images/vision.jpg"); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  padding: 1rem 3rem 1rem 8rem; 
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.vision h2 {
+  font-size: 2rem;       
+  font-weight: bold;
+  margin-bottom: 0.1rem;
+}
+
+.vision p {
+  max-width: 1000px;
+  font-size: 0.7rem;          
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.vision a {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  text-decoration: none;
+  padding: 1.2rem 2rem;
+  font-weight: bold;
+  display: inline-block;
+  font-size: 1.1rem;
+  border: 2px solid #c78c06;
+}
+/* Our Team */
+/* staggered grid layout with alternating image and text */
+.team {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: auto auto auto;
+  column-gap: 0;     
+  row-gap: 0rem;   
+  padding: 2rem 6rem; 
+  background-color: white;
+}
+
+.team h2 {
+  grid-column: 1 / 2;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.team img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* John */
+.team img:nth-of-type(1) {
+  grid-row: 2 / 3;
+  grid-column: 1 / 2;
+}
+.team .bio:nth-of-type(1) {
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+}
+
+/* Bob */
+.team .bio:nth-of-type(2) {
+  grid-row: 3 / 4;
+  grid-column: 1 / 2;
+}
+.team img:nth-of-type(2) {
+  grid-row: 3 / 4;
+  grid-column: 2 / 3;
+}
+/* Bio card background and layout */
+.bio {
+  background-color: #ffe6ac;
+  padding: 1.2rem;
+}
+
+.bio h3 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+
+.bio p {
+  font-size: 0.82rem;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+.bio p:first-of-type {
+  font-weight: bold;
+  border-bottom: 1.5px solid #c78c06;
+  padding-bottom: 0.2rem;
+  margin-bottom: 0.5rem;
+}
+/* Contact */
+/* Grid layout with form, map, and business hours */
+.contact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 2rem;
+  padding: 2rem 6rem;
+  background-color: white;
+}
+
+.contact h2 {
+  grid-column: 1 / -1;
+  font-size: 2.5rem;
+}
+
+/* Send us a message */
+.form-area {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.form-area h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.form-area form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.form-area label {
+   font-size: 0.9rem;
+}
+/* Shared styles for input and textarea */
+.form-area input,
+.form-area textarea {
+  border: 1px solid #ccc;
+  padding: 0.2rem;
+  font-size: 0.9rem;
+  width: 100%;
+  resize: vertical;
+}
+
+.form-area textarea {
+  height: 120px;
+}
+
+.form-area button {
+  background-color: #222;
+  color: #c78c06;
+  border: none;
+  padding: 0.3rem 0.8rem;
+  font-weight: bold;
+  font-size: 0.9rem; 
+  width: 60px;
+  cursor: pointer;
+  margin-top: 0.3rem; 
+}
+
+.location {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+.location h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.location iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  min-height: 300px;
+}
+
+.hours {
+  grid-column: 1 / -1;
+  grid-row: 3 / 4;
+}
+
+.hours h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.hours table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.hours th {
+  background-color: #ffe6ac;
+  text-align: center;
+  padding: 0.8rem;
+  border: 1px solid black;
+}
+
+.hours td {
+  border: 1px solid black;
+  padding: 1rem 0.5rem;
+  text-align: left;   
+  font-size: 0.9rem;
+}
+/* Footer */
+footer {
+  background-color: #222;          
+  color: #c78c06;                  
+  padding: 1rem 6rem;              
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+footer p {
+  margin-bottom: 0.5rem;
+  max-width: 1200px;
+}
+
+footer a {
+  color: #c78c06;                  
+  text-decoration: underline;
+}
+/* Mobile styles: stacked layout, smaller fonts/buttons */
+@media (max-width: 768px) {
+  body {
+    padding: 0;
+    background-color: #222; /* Darker background for mobile */
+  }
+/* Header */
+  header {
+    padding: 0;
+    display: block;
+    background-color: #222;
+  }
+
+  .mobile-topbar {
+    background-color: #c78c06;
+    position: relative;
+    height: 180px;
+    margin: 0.5rem;
+    padding: 0 0.5rem;
+  }
+
+  .mobile-topbar .logo {
+    position: absolute;
+    top: 1rem;
+    left: 0rem;
+  }
+
+  .mobile-topbar .logo img {
+    height: 80px;
+    display: block;
+  }
+
+  .mobile-home {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #000;
+    font-weight: normal;
+    font-size: 1rem;
+    text-decoration: none;
+  }
+/* Stack navigation menu vertically */
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+    gap: 0.8rem;
+  }
+/* Hide the first menu item */
+  nav ul li:first-child {
+    display: none;
+  }
+
+  nav ul li a {
+    color: #c78c06;
+    font-size: 1rem;
+    font-weight: normal;
+    text-decoration: none;
+  }
+
+  .header-search {
+    padding: 0.8rem 1rem 1rem;
+    background-color: #222;
+    display: flex;
+    justify-content: center;
+  }
+
+  .search-form {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .search-form input {
+    flex: 1;
+    padding: 0.6rem;
+    font-size: 1rem;
+    border: none;
+  }
+
+  .search-form button {
+    background-color: #222;
+    color: #c78c06;
+    border: 1px solid #c78c06;
+    width: 48px;
+    height: 48px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+
+  /* Hero */
+  .hero {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+  .hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 1.5rem 1rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    min-height: 200px;
+    justify-content: center;
+  }
+
+  .hero-text h1 {
+    font-size: 4rem;
+    line-height: 1.3;
+    font-weight: bold;
+  }
+
+  .hero-text p {
+    font-size: 0.9rem;
+    line-height: 1.2;
+  }
+
+  .hero-text a {
+    background-color: #c78c06;
+    color: #222;
+    padding: 2rem 2.5rem;
+    font-size: 1.3rem;
+    font-weight: normal;
+    text-decoration: none;
+    display: inline-block;
+    max-width: fit-content;
+  }
+
+  /* About Us */
+  .about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffe6ac;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .about img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .about-text {
+    width: 100%;
+  }
+
+  .about-text h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .about-text p {
+    width: 100%;
+    margin: 0;
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    font-weight: normal;
+    text-align: left;
+  }
+
+  /* Services */
+  .services {
+    background-color: white;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 2rem 1rem 1rem;
+  }
+
+  .services h2 {
+    grid-column: 1 / -1;
+    font-size: 2rem;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    line-height: 1;
+  }
+
+  .service {
+    background-color: #ffe6ac;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+  }
+
+  .service img {
+    width: 100%;
+    height: auto;
+  }
+
+  .service h3 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 1.5rem 0.8rem 0;
+  }
+
+  .service p {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.8rem;
+    line-height: 1.4;
+  }
+
+  .service a {
+    background-color: #222;
+    color: white;
+    padding: 1.3rem 0.8rem;
+    font-size: 1rem;
+    margin: 0.2rem 0.8rem 0;
+    text-decoration: none;
+    font-weight: normal;
+    max-width: fit-content;
+  }
+
+  /* Vision */
+  .vision {
+    padding: 1rem;
+  }
+
+  .vision p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+  }
+
+  .vision a {
+    font-size: 1rem;
+    font-weight: normal;
+  }
+
+  /* Team */
+  .team {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, auto);
+    gap: 0;
+    background-color: white;
+    padding: 1rem;
+  }
+
+  .team h2 {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .team img:nth-of-type(1) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .team .bio:nth-of-type(1) {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .team img:nth-of-type(2) {
+    grid-column: 1;
+    grid-row: 4;
+    margin-top: 1rem;
+  }
+
+  .team .bio:nth-of-type(2) {
+    grid-column: 1;
+    grid-row: 5;
+  }
+
+  .bio {
+    padding: 1rem;
+  }
+  .bio p {
+    font-size: 0.86rem;   
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Contact */
+  .contact {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .contact h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    order: 0;
+  }
+
+  .form-area {
+    width: 100%;
+    order: 1;
+  }
+
+  .hours {
+    width: 100%;
+    order: 2;
+  }
+
+  .location {
+    width: 100%;
+    order: 3;
+  }
+
+  .location iframe {
+    width: 100%;
+    height: 300px;
+    border: 0;
+  }
+
+  /* Footer */
+  footer {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 0.5rem;
+    height: 90px;
+    letter-spacing: 0.1px;
+  }
+
+  footer p {
+    margin-bottom: 0.1rem;
+    line-height: 1.6;
+  }
+}
+/* Hide mobile-only Home link on large screens */
+@media (min-width: 769px) {
+.mobile-home {
+  display: none;
+}
+}
